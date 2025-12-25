@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bible Reader Tracker</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="top-nav">
+      <div class="brand">Bible Reader Tracker</div>
+      <div class="search-container">
+        <input id="book-search" type="text" placeholder="Search books or chapters..." aria-label="Search books" />
+        <div id="search-results" class="search-results"></div>
+      </div>
+      <button id="settings-button" class="ghost">Settings</button>
+    </header>
+
+    <main>
+      <section id="next-chapter" class="card next-chapter" aria-live="polite"></section>
+
+      <section class="card">
+        <div class="section-heading">
+          <h2>Statistics</h2>
+          <small>Select which stats to show in Settings</small>
+        </div>
+        <div id="stats-grid" class="stats-grid"></div>
+      </section>
+
+      <section class="card">
+        <div class="section-heading">
+          <h2>Books</h2>
+          <div class="view-toggle" id="view-toggle"></div>
+        </div>
+        <div id="books-container"></div>
+      </section>
+    </main>
+
+    <div id="settings-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="settings-title">Settings</h3>
+          <button id="close-settings" aria-label="Close settings">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="setting-group">
+            <h4>Displayed stats</h4>
+            <div id="stats-toggle-list" class="toggle-list"></div>
+          </div>
+          <div class="setting-group">
+            <h4>Theme</h4>
+            <select id="theme-select">
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </div>
+          <div class="setting-group">
+            <h4>Daily goal</h4>
+            <input id="daily-goal" type="number" min="1" value="1" />
+          </div>
+          <div class="setting-group">
+            <h4>View preference</h4>
+            <select id="view-preference">
+              <option value="expanded">Expanded</option>
+              <option value="compact">Compact</option>
+            </select>
+          </div>
+          <div class="setting-group">
+            <h4>Data export</h4>
+            <button id="export-data">Download JSON backup</button>
+          </div>
+          <div class="setting-group help">
+            <h4>About</h4>
+            <p>Track your reading, keep a streak, and finish the Bible with confidence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

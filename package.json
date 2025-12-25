@@ -1,0 +1,11 @@
+{
+  "name": "bible-reader-tracker",
+  "version": "0.1.0",
+  "description": "Personalized Bible reading companion with progress tracking and stats.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node server.js"
+  }
+}
